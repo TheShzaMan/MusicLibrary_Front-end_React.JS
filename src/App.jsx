@@ -25,7 +25,7 @@ function App() {
 
 	return (
 		<div className='App'>
-			{/* <MusicTable key= /> */}
+			<MusicTable key={songLibrary.id} songLibrary={songLibrary} />
 			<NewSongForm onNewSong={fetchSongLibrary} />
 		</div>
 	);

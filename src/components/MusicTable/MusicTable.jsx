@@ -1,8 +1,12 @@
 import React from "react";
 import axios from "axios";
+import SongRow from "../SongRow/SongRow";
 
-const MusicTable = ({ songLibrary }) => {
-	const tableRow = songLibrary.map((song) => <SongData song={song} />);
+const MusicTable = ({ songLibrary = [] }) => {
+	const tableRow = songLibrary.map((song) => (
+		<SongRow key={song.id} song={song} />
+	));
+	// console.log(song);
 	return (
 		<div className='table-container'>
 			{/* <h2>{tableTitle}</h2> */}
@@ -16,7 +20,7 @@ const MusicTable = ({ songLibrary }) => {
 						<th>Genre</th>
 					</tr>
 				</thead>
-				<tbody>{rows}</tbody>
+				<tbody>{tableRow}</tbody>
 			</table>
 		</div>
 	);
