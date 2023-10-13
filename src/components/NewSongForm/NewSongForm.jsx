@@ -9,10 +9,18 @@ const NewSongForm = ({ onNewSong }) => {
 	const [releaseDate, setReleaseDate] = useState("");
 	const [genre, setGenre] = useState("");
 
+	function ResetSongForm() {
+		setTitle("");
+		setArtist("");
+		setAlbum("");
+		setReleaseDate("");
+		setGenre("");
+	}
+
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		const songBody = {
+		const dataSongBody = {
 			title,
 			artist,
 			album,
@@ -22,10 +30,11 @@ const NewSongForm = ({ onNewSong }) => {
 		try {
 			const response = await axios.post(
 				"https://localhost:7274/api/songs",
-				songBody
+				dataSongBody
 			);
 			if (response.status === 201) {
 				onNewSong();
+				ResetSongForm();
 			}
 		} catch (error) {
 			console.warn("Error submitting NewSongForm:", error);
@@ -35,14 +44,13 @@ const NewSongForm = ({ onNewSong }) => {
 	return (
 		<form onSubmit={handleSubmit} className='form-container'>
 			<h4>Add Song to Library</h4>
-			<InputField label='Title' value={title} onChange={setTitle} />
+			<InputField label='Song Title' value={title} onChange={setTitle} />
 			<InputField label='Artist' value={artist} onChange={setArtist} />
 			<InputField label='Album' value={album} onChange={setAlbum} />
 			<InputField
-				label='Release Date'
+				label='Year'
 				value={releaseDate}
 				onChange={setReleaseDate}
-				type='date'
 			/>
 			<InputField label='Genre' value={genre} onChange={setGenre} />
 			<div>
