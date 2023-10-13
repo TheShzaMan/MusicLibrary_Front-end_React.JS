@@ -3,10 +3,12 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import NewSongForm from "./components/NewSongForm/NewSongForm";
 import MusicTable from "./components/MusicTable/MusicTable";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 function App() {
 	const [songLibrary, setSongLibrary] = useState([]);
-
+	// const [filteredLibrary, setFilteredLibrary] = useState([]);
+	console.log(songLibrary);
 	const fetchSongLibrary = async () => {
 		try {
 			const response = await axios.get(
@@ -19,12 +21,15 @@ function App() {
 		}
 	};
 
+	// const filterLibrary = ()
+
 	useEffect(() => {
 		fetchSongLibrary();
 	}, []);
 
 	return (
 		<div className='App'>
+			<SearchBar songLibrary={songLibrary} />
 			<MusicTable key={songLibrary.id} songLibrary={songLibrary} />
 			<NewSongForm onNewSong={fetchSongLibrary} />
 		</div>
