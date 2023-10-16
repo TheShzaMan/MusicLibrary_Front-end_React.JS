@@ -1,6 +1,7 @@
 import InputField from "../InputField/InputField";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./NewSongForm.css";
 
 const NewSongForm = ({ onNewSong }) => {
 	const [title, setTitle] = useState("");
@@ -43,7 +44,8 @@ const NewSongForm = ({ onNewSong }) => {
 
 	return (
 		<form onSubmit={handleSubmit} className='form-container'>
-			<h4>Add Song to Library</h4>
+			<p className='add-title'>Add Song to Library</p>
+
 			<InputField label='Song Title' value={title} onChange={setTitle} />
 			<InputField label='Artist' value={artist} onChange={setArtist} />
 			<InputField label='Album' value={album} onChange={setAlbum} />
@@ -53,8 +55,10 @@ const NewSongForm = ({ onNewSong }) => {
 				onChange={setReleaseDate}
 			/>
 			<InputField label='Genre' value={genre} onChange={setGenre} />
-			<div>
-				<button className='submit'>ADD SONG</button>
+			<div className='submit'>
+				<button className='submit w3-button w3-round-xlarge w3-hover-pink'>
+					ADD SONG
+				</button>
 			</div>
 		</form>
 	);

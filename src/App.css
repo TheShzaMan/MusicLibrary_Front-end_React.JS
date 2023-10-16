@@ -1,2 +1,55 @@
-
-
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: Tahoma;
+}
+html {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	min-height: 100vh;
+}
+.body {
+	background-image: linear-gradient(
+		to bottom right,
+		black,
+		black,
+		rgb(22, 1, 22),
+		rgb(54, 6, 54),
+		rgb(166, 58, 164),
+		rgb(249, 161, 247)
+	);
+	margin: 0;
+	width: 100%;
+	min-height: 100vh;
+}
+.container {
+	margin: 0;
+	width: 100%;
+}
+.text-center {
+	width: 100%;
+}
+.title-container {
+	height: 105px;
+	margin-top: 2%;
+}
+.search-container {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	height: 105px;
+	margin-right: 0%;
+	margin-top: 2%;
+	padding-bottom: 1%;
+}
+.new-song {
+	z-index: 1;
+	position: sticky;
+	margin-left: 20%;
+	margin-top: 25%;
+}

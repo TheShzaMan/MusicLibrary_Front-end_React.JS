@@ -1,0 +1,15 @@
+.tbl {
+	color: white;
+}
+
+.tbl-container {
+	color: rgb(12, 12, 12);
+	height: 200px;
+	overflow: auto;
+	min-width: 400px;
+}
+.heading {
+	background-image: linear-gradient(transparent, #2b232a, transparent);
+	text-shadow: -2px 2px 0px rgb(153, 12, 151), -1px 1px 2px rgb(248, 247, 248);
+	position: relative;
+}

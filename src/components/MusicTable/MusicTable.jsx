@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import SongRow from "../SongRow/SongRow";
+import "./MusicTable.css";
 
 const MusicTable = ({ songLibrary = [] }) => {
 	const tableRow = songLibrary.map((song) => (
@@ -8,11 +9,11 @@ const MusicTable = ({ songLibrary = [] }) => {
 	));
 	// console.log(song);
 	return (
-		<div className='table-container'>
+		<div className='tbl-container'>
 			{/* <h2>{tableTitle}</h2> */}
-			<table className='table'>
+			<table className='tbl'>
 				<thead>
-					<tr>
+					<tr className='heading'>
 						<th>Title</th>
 						<th>Artist</th>
 						<th>Album</th>

@@ -1,0 +1,13 @@
+.add-title {
+	font-size: 22px;
+	font-weight: bolder;
+	color: rgb(134, 158, 180);
+	text-shadow: -1px 1px 0 rgb(153, 12, 151);
+	justify-content: center;
+	display: flex;
+}
+.submit {
+	display: flex;
+	justify-content: flex-end;
+	font-weight: bold;
+}
